@@ -1,0 +1,257 @@
+.topbar {
+  background-image: radial-gradient(circle, #fdcf38, #f39c12, #f79947) !important;
+}
+
+.navbar-logo {
+  height: 85px;
+}
+
+.bookstore{
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+color: #f85e5e !important;
+}
+    
+.topbar {  
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+    
+.topbar .right-icons a {
+  margin-left: 15px;
+  color: black;
+  text-decoration: none;
+}
+.right-icons {
+  display: flex;
+  align-items: center;
+}
+
+.right-icons .icon, .right-icons .search-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.right-icons .search-form {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.right-icons .search-input {
+  padding: 8px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+}
+
+.right-icons .search-form button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 16px;
+}
+
+.right-icons .search-form button img {
+  width: 25px;
+  height: 25px;
+}
+
+.navbar-collapse {
+  text-align: center;
+}
+
+.navbar-nav {
+  list-style: none;
+}
+
+.navbar-nav .nav-item {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+@media (max-width: 768px) {
+  .right-icons {
+    display: none;
+  }
+
+  .topbar .d-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px;
+  }
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+.hero {
+  background: url('assets/fondo.jpg') center/cover no-repeat;
+  border-radius: 15px;
+  color: #fff;
+  padding-bottom: 5rem;
+}
+
+.hero-content {
+  border-radius: 15px;
+}
+
+.hero h1 {
+  font-size: 3.5rem; 
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero .btn-warning {
+  background-color: #fdcb28;
+  border-color: #fdcb28;
+}
+
+.hero .btn-warning:hover {
+  background-color: #f39c12;
+  border-color: #f39c12;
+}
+
+.hero .btn-outline-light {
+  color: #fff;
+  border-color: #fff;
+}
+
+.hero .btn-outline-light:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.about-header h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  color: #e24545;
+  margin-top: 50px;
+}
+
+.about-section {
+  padding: 40px 10px;
+}
+
+.about-section h2 {
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body h3 {
+  color: #f85e5e;
+}
+
+.col-lg-6 img {
+  width: 470px;
+  margin-left: 60px;
+  height: auto;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.contact-form {
+  background-color: #fff;
+  margin-bottom: 80px;
+}
+
+.contact-form .form-label {
+  font-weight: 600;
+}
+
+.contact-form .btn-primary {
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  color: #222;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #e6b800;
+  border-color: #e6b800;
+}
+
+.categorias img {
+  width: 270px; 
+  height: 400px; 
+  object-fit: cover; 
+  border-radius: 10px; 
+}
+
+#libros-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card-libro {
+  width: 300px;
+  margin: auto;
+}
+
+.card-libro .card-img-top {
+  height: 450px;
+  object-fit: cover;
+}
+
+.card-libro .card {
+  background-color: rgb(15, 15, 15);
+  border: none;
+  margin-bottom: 40px;
+}
+
+.card-libro .card-body {
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comics Dani</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar d-flex justify-content-between align-items-center px-4 py-2">
+    <div class="d-flex align-items-center">
+      <a href="index.html"><img src="assets/logo.png" alt="Logo Comics Dani" class="navbar-logo me-2"></a>
+      <span class="bookstore fw-bold">BookStore</span>
+    </div>
+    <div class="right-icons d-flex align-items-center gap-3">
+        <form class="search-form" onsubmit="return false;">
+        <input type="search" id="search-input" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+        <button type="submit">
+            <img src="assets/lupa.png" alt="Buscar" class="search-icon"> 
+        </button>
+        </form>
+      <a href="#"><img src="assets/cuenta.png" alt="Mi cuenta" class="icon"></a>
+      <a href="#"><img src="assets/carrito-de-compras.png" alt="Carrito" class="icon"></a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="libros.html">Libros</a></li>
+            <li class="nav-item"><a class="nav-link" href="mangas.html">Mangas</a></li>
+            <li class="nav-item"><a class="nav-link" href="comics.html">Cómics</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <main class="container my-5">
+
+  <!--Bienvenida-->
+  <section class="hero text-center mb-5 py-1">
+    <div class="hero-content p-4">
+        <h1 class="display-4 fw-bold mb-3">¡Bienvenido a Comics Dani!</h1>
+        <p class="lead mb-4">Tu librería y tienda de cómics favorita. Explora novedades, clásicos y ofertas exclusivas.</p>
+        <a href="#novedades" class="btn btn-warning btn-lg me-2 fw-bold">Ver Novedades</a>
+        <a href="#categorias" class="btn btn-light btn-lg fw-bold">Explorar Categorías</a>
+    </div>
+  </section>
+  
+  <!--Destacados -->
+  <section id="novedades" class="novedades mb-5">
+    <h3 class="mb-4 text-center">Novedades</h3>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col text-center">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/given.jpg" class="card-img-top" alt="Libro 1">
+          <div class="card-body">
+            <h5 class="card-title">Given</h5>
+            <p class="card-text">Ritsuka Uenoyama es un estudiante de secundaria que empieza a hastiarse de la guitarra y el baloncesto, dos actividades que adoraba.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/spiderman.jpg" class="card-img-top" alt="Libro 2">
+          <div class="card-body">
+            <h5 class="card-title">Spidey</h5>
+            <p class="card-text">Volvemos a los primeros días de Pete como Spiderman, para presentarte esa época mágica de la más asombrosa y sensacional manera.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/un-extrano-a-la-orilla-del-mar.jpeg" class="card-img-top" alt="Libro 3">
+          <div class="card-body">
+            <h5 class="card-title">Un extraño a la orilla del mar</h5>
+            <p class="card-text">Un joven aspirante novelista y un estudiante se conocen en un banco frente a la playa donde intercambian palabras y sentimientos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div class="card h-100 shadow-sm">
+          <img src="assets/scooby.webp" class="card-img-top" alt="Libro 4">
+          <div class="card-body">
+            <h5 class="card-title">Scooby-Doo y sus Amigos</h5>
+            <p class="card-text">Scooby y sus amigos han formado equipo con superhéroes famosos como Batman , la Mujer Maravilla y Superman.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="video mb-5 text-center">
+    <h3 class="mb-4">Películas basadas en Cómics</h3>
+    <div class="video-container mx-auto" style="max-width: 800px; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <video width="100%" height="auto" controls poster="assets/video-poster.jpg">
+        <source src="assets/sunflower.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section id="categorias" class="categorias mb-5">
+    <h3 class="mb-4 text-center">Explora por Categorías</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col text-center">
+        <a href="mangas.html"><img src="assets/dbz.jpg" alt="Manga" class="img-fluid rounded mb-2 shadow-sm"></a>
+        <h5>Manga</h5>
+      </div>
+      <div class="col text-center">
+        <a href="comics.html"><img src="assets/superman.jpg" alt="Cómic" class="img-fluid rounded mb-2 shadow-sm"></a>
+        <h5>Cómic</h5>
+      </div>
+      <div class="col text-center">
+        <a href="libros.html"><img src="assets/narnia.jpg" alt="Libros" class="img-fluid rounded mb-2 shadow-sm"></a>
+        <h5>Libros</h5>
+      </div>
+    </div>
+  </section>
+
+  <!--Promociones -->
+  <section class="promociones mb-5 text-center">
+    <h3 class="mb-4">Promociones Especiales</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card bg-warning text-dark h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Descuento del 20%</h5>
+            <p class="card-text">En toda la sección de Marvel esta semana.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-success text-white h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Oferta Manga</h5>
+            <p class="card-text">Compra 2 tomos y llévate 1 gratis.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card bg-danger text-white h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Cómics Independientes</h5>
+            <p class="card-text">10% de descuento en autores locales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+ 
+
+    <!-- Footer -->
+  <footer class="text-center py-4 mt-5 bg-dark text-white">
+    <p>&copy; 2025 Comics Dani - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

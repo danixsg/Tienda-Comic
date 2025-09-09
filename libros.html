@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comics Dani</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar d-flex justify-content-between align-items-center px-4 py-2">
+    <div class="d-flex align-items-center">
+      <a href="index.html"><img src="assets/logo.png" alt="Logo Comics Dani" class="navbar-logo me-2"></a>
+      <span class="bookstore fw-bold">BookStore</span>
+    </div>
+    <div class="right-icons d-flex align-items-center gap-3">
+        <form class="search-form" onsubmit="return false;">
+        <input type="search" id="search-input" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+        <button type="submit">
+            <img src="assets/lupa.png" alt="Buscar" class="search-icon"> 
+        </button>
+        </form>
+      <a href="#"><img src="assets/cuenta.png" alt="Mi cuenta" class="icon"></a>
+      <a href="#"><img src="assets/carrito-de-compras.png" alt="Carrito" class="icon"></a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="libros.html">Libros</a></li>
+            <li class="nav-item"><a class="nav-link" href="mangas.html">Mangas</a></li>
+            <li class="nav-item"><a class="nav-link" href="comics.html">Cómics</a></li>
+            <li class="nav-item"><a class="nav-link" href="contacto.html">Contáctanos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido Libros -->
+  <main class="container my-5">
+    <h2 class="text-center mb-4">Nuestros Libros</h2>
+    <div id="libros-container">
+    </div>
+  </main>
+
+ <!-- Footer -->
+  <footer class="text-center py-4 mt-5 bg-dark text-white">
+    <p>&copy; 2025 Comics Dani - Todos los derechos reservados</p>
+  </footer>
+
+    <script src="productos.js"></script>
+    <script>
+    const librosContainer = document.getElementById("libros-container");
+    const searchInput = document.getElementById("search-input");
+
+    const libros = productos.filter(producto => producto.tipo === "Libro");
+
+    function mostrarLibros(lista) {
+        librosContainer.innerHTML = ""; 
+        lista.forEach(libro => {
+        const card = document.createElement("div");
+        card.classList.add("card-libro"); 
+        card.innerHTML = `
+            <div class="card shadow-sm">
+            <img src="${libro.img}" class="card-img-top" alt="${libro.nombre}">
+            <div class="card-body text-center">
+                <h6 class="card-title">${libro.nombre}</h6>
+                <p class="card-text"><small><strong>Género:</strong> ${libro.genero}</small></p>
+                <p class="card-text fw-bold">${libro.precio}</p>
+                <button class="btn btn-sm btn-danger">Agregar</button>
+            </div>
+            </div>
+        `;
+        librosContainer.appendChild(card);
+        });
+    }
+
+    mostrarLibros(libros);
+
+    // Filtrar 
+    searchInput.addEventListener("input", () => {
+        const texto = searchInput.value.toLowerCase();
+        const filtrados = libros.filter(libro =>
+        libro.nombre.toLowerCase().includes(texto) ||
+        libro.genero.toLowerCase().includes(texto)
+        );
+        mostrarLibros(filtrados);
+    });
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
