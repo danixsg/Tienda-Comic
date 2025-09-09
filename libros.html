@@ -57,45 +57,52 @@
     <p>&copy; 2025 Comics Dani - Todos los derechos reservados</p>
   </footer>
 
-    <script src="productos.js"></script>
-    <script>
-    const librosContainer = document.getElementById("libros-container");
-    const searchInput = document.getElementById("search-input");
+<script src="productos.js"></script>
+<script>
+  const librosContainer = document.getElementById("libros-container");
+  const searchInput = document.getElementById("search-input");
 
-    const libros = productos.filter(producto => producto.tipo === "Libro");
+  const libros = productos.filter(producto => producto.tipo === "Libro");
 
-    function mostrarLibros(lista) {
-        librosContainer.innerHTML = ""; 
-        lista.forEach(libro => {
-        const card = document.createElement("div");
-        card.classList.add("card-libro"); 
-        card.innerHTML = `
-            <div class="card shadow-sm">
-            <img src="${libro.img}" class="card-img-top" alt="${libro.nombre}">
-            <div class="card-body text-center">
-                <h6 class="card-title">${libro.nombre}</h6>
-                <p class="card-text"><small><strong>Género:</strong> ${libro.genero}</small></p>
-                <p class="card-text fw-bold">${libro.precio}</p>
-                <button class="btn btn-sm btn-danger">Agregar</button>
-            </div>
-            </div>
-        `;
-        librosContainer.appendChild(card);
-        });
-    }
+  function mostrarLibros(lista) {
+    librosContainer.innerHTML = "";
 
-    mostrarLibros(libros);
+    lista.forEach(libro => {
+      const esLibroEspecial = libro.nombre === "Conectando Corazones";
 
-    // Filtrar 
-    searchInput.addEventListener("input", () => {
-        const texto = searchInput.value.toLowerCase();
-        const filtrados = libros.filter(libro =>
-        libro.nombre.toLowerCase().includes(texto) ||
-        libro.genero.toLowerCase().includes(texto)
-        );
-        mostrarLibros(filtrados);
+      const card = document.createElement("div");
+      card.classList.add("card-libro");
+      card.innerHTML = `
+        <div class="card shadow-sm">
+          ${esLibroEspecial 
+            ? `<a href="https://a.co/d/d7Jphs8" target="_blank"><img src="${libro.img}" class="card-img-top" alt="${libro.nombre}"></a>`
+            : `<img src="${libro.img}" class="card-img-top" alt="${libro.nombre}">`
+          }
+          <div class="card-body text-center">
+            <h6 class="card-title">${libro.nombre}</h6>
+            <p class="card-text"><small><strong>Género:</strong> ${libro.genero}</small></p>
+            <p class="card-text fw-bold">${libro.precio}</p>
+            <button class="btn btn-sm btn-danger">Agregar</button>
+          </div>
+        </div>
+      `;
+      librosContainer.appendChild(card);
     });
-    </script>
+  }
+
+  // Mostrar todos los libros al inicio
+  mostrarLibros(libros);
+
+  // Buscador
+  searchInput.addEventListener("input", () => {
+    const texto = searchInput.value.toLowerCase();
+    const filtrados = libros.filter(libro =>
+      libro.nombre.toLowerCase().includes(texto) ||
+      libro.genero.toLowerCase().includes(texto)
+    );
+    mostrarLibros(filtrados);
+  });
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
