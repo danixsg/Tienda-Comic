@@ -35,14 +35,14 @@ color: #f85e5e !important;
 .topbar .right-icons a {
   margin-left: 15px;
   color: black;
-  text-decoration: none;
 }
 .right-icons {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-.right-icons .icon, .right-icons .search-icon {
+.right-icons .icon {
   width: 32px;
   height: 32px;
 }
@@ -61,18 +61,11 @@ color: #f85e5e !important;
   border-radius: 40px;
 }
 
-.right-icons .search-form button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  margin-left: 16px;
+@media (max-width: 576px) {
+  .right-icons .icon {
+    margin-left: 140px; 
+  }
 }
-
-.right-icons .search-form button img {
-  width: 25px;
-  height: 25px;
-}
-
 .navbar-collapse {
   text-align: center;
 }
@@ -174,6 +167,47 @@ body {
 .about-section h2 {
   color: #f39c12;
   margin-bottom: 20px;
+}
+
+.about-section .col-lg-6 img {
+  width: 500px;     
+  height: auto;      
+  display: block;
+  margin: 0 auto;
+  object-fit: cover; 
+}
+
+@media (max-width: 576px) {
+  .about-section .col-lg-6 img {
+    max-width: 70%;   
+  }
+}
+
+@media (max-width: 992px) {
+  .about-header h1 {
+    font-size: 2.5rem;
+    margin-top: 40px;
+  }
+  .about-section {
+    padding: 30px 15px;
+  }
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 576px) {
+  .about-header h1 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+  .about-section {
+    padding: 20px 10px;
+  }
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
 }
 
 .card {
